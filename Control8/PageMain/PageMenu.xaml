@@ -1,0 +1,43 @@
+﻿<Page x:Class="Control8.PageMain.PageMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Control8.PageMain"
+      mc:Ignorable="d" 
+      d:DesignHeight="769" d:DesignWidth="300"
+      Title="PageMenu">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="0.5"
+                    Height="769"
+                    Width="300">
+            
+            <TextBlock Height="70">
+                <Hyperlink Name="HL1"
+                           FontSize="25"
+                           Click="HL1_Click">
+                    <Run Text="Добавить группу"/>
+                </Hyperlink>
+            </TextBlock>
+
+            <TextBlock Height="70">
+                <Hyperlink Name="HL2"
+                           FontSize="25"
+                           Click="HL2_Click">
+                    <Run Text="Добавить активность"/>
+                </Hyperlink>
+            </TextBlock>
+
+            <TextBlock Height="70">
+                <Hyperlink Name="HL3"
+                           FontSize="25"
+                           Click="HL3_Click">
+                    <Run Text="Просмотреть учёт"/>
+                </Hyperlink>
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>
