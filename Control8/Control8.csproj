@@ -81,6 +81,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageMain\AddActivityPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageMain\AddGroupPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -131,6 +135,9 @@
     </Compile>
     <Compile Include="PageMain\ActivityPage.xaml.cs">
       <DependentUpon>ActivityPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageMain\AddActivityPage.xaml.cs">
+      <DependentUpon>AddActivityPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageMain\AddGroupPage.xaml.cs">
       <DependentUpon>AddGroupPage.xaml</DependentUpon>

@@ -9,6 +9,49 @@
       Title="JournalPage">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Выберите начало периода"
+                   FontSize="25"
+                   HorizontalAlignment="Left" 
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Top"/>
+
+        <DatePicker Name="BeginningDP"
+                    Height="40"
+                    Width="300"
+                    HorizontalAlignment="Left"
+                    FontSize="25"/>
+
+        <ComboBox Name="MarkCmb"
+                  FontSize="20"
+                  HorizontalAlignment="Right" 
+                  VerticalAlignment="Center"
+                  Margin="0 8"
+                  Width="394"
+                  Height="55"/>
+
+        <DataGrid Name="JournalDG"
+                  Grid.Row="1"
+                  AutoGenerateColumns="False"
+                  FontSize="20"
+                  Loaded="JournalDG_Loaded">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Оценка" Binding="{Binding Mark}"/>
+                <DataGridTextColumn Header="Группа" Binding="{Binding Group.Name}" />
+                <DataGridTextColumn Header="Активность" Binding="{Binding Activity.Name}"/>
+            </DataGrid.Columns>
+        </DataGrid>
         
+        <Button Content="Добавить"
+                Grid.Row="2"
+                FontSize="20"
+                Name="AddlBtn" 
+                HorizontalAlignment="Left" 
+                Width="200" Height="60"
+                Click="AddlBtn_Click"/>
     </Grid>
 </Page>

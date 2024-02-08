@@ -35,8 +35,11 @@ namespace Control8.PageMain
         {
             ClassFrame.FrameBody.Navigate(new PageMain.ActivityPage());
         }
-
         private void HL3_Click(object sender, RoutedEventArgs e)
+        {
+            ClassFrame.FrameBody.Navigate(new PageMain.AddActivityPage());
+        }
+        private void HL4_Click(object sender, RoutedEventArgs e)
         {
             ClassFrame.FrameBody.Navigate(new PageMain.JournalPage());
         }

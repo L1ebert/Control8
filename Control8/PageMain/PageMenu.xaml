@@ -35,6 +35,14 @@
                 <Hyperlink Name="HL3"
                            FontSize="25"
                            Click="HL3_Click">
+                    <Run Text="Создать учет"/>
+                </Hyperlink>
+            </TextBlock>
+            
+            <TextBlock Height="70">
+                <Hyperlink Name="HL4"
+                           FontSize="25"
+                           Click="HL4_Click">
                     <Run Text="Просмотреть учёт"/>
                 </Hyperlink>
             </TextBlock>
