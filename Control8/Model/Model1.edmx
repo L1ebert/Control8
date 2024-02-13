@@ -45,6 +45,18 @@
           <Property Name="Code" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
         </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "TolmachevFrolovaControl8.dbo.View_1" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="View_1">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="DateEvent" />
+            <PropertyRef Name="Mark" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="90" Nullable="false" />
+          <Property Name="DateEvent" Type="date" Nullable="false" />
+          <Property Name="Mark" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Activity_Direction">
           <End Role="Direction" Type="Self.Direction" Multiplicity="1" />
           <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
@@ -99,6 +111,13 @@
           <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Journal" EntityType="Self.Journal" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Special" EntityType="Self.Special" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="View_1" EntityType="Self.View_1" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_1].[Name] AS [Name], 
+    [View_1].[DateEvent] AS [DateEvent], 
+    [View_1].[Mark] AS [Mark]
+    FROM [dbo].[View_1] AS [View_1]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Activity_Direction" Association="Self.FK_Activity_Direction">
             <End Role="Direction" EntitySet="Direction" />
             <End Role="Activity" EntitySet="Activity" />
@@ -238,7 +257,18 @@
             <End Role="Group" EntitySet="Group" />
             <End Role="Journal" EntitySet="Journal" />
           </AssociationSet>
+          <EntitySet Name="View_1" EntityType="TolmachevFrolovaControl8Model.View_1" />
         </EntityContainer>
+        <EntityType Name="View_1">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="DateEvent" />
+            <PropertyRef Name="Mark" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="DateEvent" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Mark" Type="Decimal" Nullable="false" Precision="8" Scale="2" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -286,6 +316,15 @@
             <EntityTypeMapping TypeName="TolmachevFrolovaControl8Model.Special">
               <MappingFragment StoreEntitySet="Special">
                 <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_1">
+            <EntityTypeMapping TypeName="TolmachevFrolovaControl8Model.View_1">
+              <MappingFragment StoreEntitySet="View_1">
+                <ScalarProperty Name="Mark" ColumnName="Mark" />
+                <ScalarProperty Name="DateEvent" ColumnName="DateEvent" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
