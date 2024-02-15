@@ -46,6 +46,13 @@
                     <Run Text="Просмотреть учёт"/>
                 </Hyperlink>
             </TextBlock>
+            <TextBlock Height="70">
+                <Hyperlink Name="P5"
+                           FontSize="25"
+                           Click="P5_Click">
+                    <Run Text="Учёт2"/>
+                </Hyperlink>
+            </TextBlock>
         </StackPanel>
     </Grid>
 </Page>

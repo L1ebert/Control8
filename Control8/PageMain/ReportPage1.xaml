@@ -1,0 +1,36 @@
+﻿<Page x:Class="Control8.PageMain.ReportPage1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Control8.PageMain"
+      mc:Ignorable="d" 
+      d:DesignHeight="769" d:DesignWidth="1000"
+      Title="ReportPage1">
+
+    <Grid>
+        <StackPanel Orientation="Vertical"
+                    Margin="25"
+                    Width="325">
+            <Button Content="Печать"
+                    Name="PrintBtn"
+                    Click="PrintBtn_Click"
+                    Width="50"/>
+            <DataGrid AutoGenerateColumns="False"
+                          Name="JournallDG"
+                          Height="300"
+                          Width="325"
+                          VerticalAlignment="Top"
+                          HorizontalAlignment="Left"
+                          CanUserAddRows="False"
+                          CanUserDeleteRows="False"
+                          CanUserResizeRows="False"
+                          Margin="0,25">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Направление" Binding="{Binding Activity.Direction.Name}" Width="*"/>
+                    <DataGridTextColumn Header="Оценка" Binding="{Binding Mark}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -43,5 +43,10 @@ namespace Control8.PageMain
         {
             ClassFrame.FrameBody.Navigate(new PageMain.JournalPage());
         }
+
+        private void P5_Click(object sender, RoutedEventArgs e)
+        {
+            ClassFrame.FrameBody.Navigate(new PageMain.ReportPage());
+        }
     }
 }

@@ -101,6 +101,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageMain\ReportPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageMain\ReportPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Activity.cs">
@@ -153,6 +161,12 @@
     </Compile>
     <Compile Include="PageMain\PageMenu.xaml.cs">
       <DependentUpon>PageMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageMain\ReportPage.xaml.cs">
+      <DependentUpon>ReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageMain\ReportPage1.xaml.cs">
+      <DependentUpon>ReportPage1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

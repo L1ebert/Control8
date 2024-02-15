@@ -1,0 +1,52 @@
+﻿<Page x:Class="Control8.PageMain.ReportPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Control8.PageMain"
+      mc:Ignorable="d" 
+      d:DesignHeight="769" d:DesignWidth="1000"
+      Title="ReportPage">
+
+    <Grid>
+        <StackPanel Orientation="Vertical"
+                    Margin="30"
+                    Width="500">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Выберите специальность"
+                           Width="180"/>
+                <ComboBox Width="250"
+                          Height="20"
+                          Name="SpecialCmb"/>
+                <Button Content="Поиск"
+                        Width="70"
+                        Name="SearchBtn"
+                        Click="SearchBtn_Click"/>
+            </StackPanel>
+            <StackPanel>
+                <DataGrid AutoGenerateColumns="False"
+                          Name="InfoDG"
+                          Height="400"
+                          Width="350"
+                          VerticalAlignment="Top" 
+                          CanUserAddRows="False"
+                          CanUserDeleteRows="False"
+                          CanUserResizeRows="False"
+                          Margin="25">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Группа" Binding="{Binding Name}" Width="180"/>
+                        <DataGridTemplateColumn Width=" * ">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Баллы"
+                                            Name="BallBtn"
+                                            Click="BallBtn_Click"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
